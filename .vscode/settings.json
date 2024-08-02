@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./Lab7.2_LineCoverage/assignment/clumpCount/source"
+    ]
+}

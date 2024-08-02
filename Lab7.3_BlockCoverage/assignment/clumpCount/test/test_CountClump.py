@@ -20,11 +20,14 @@ class TestCountClump(unittest.TestCase):
     def test_multiple_clumps(self):
         self.assertEqual(CountClump.count_clumps([1, 2, 2, 3, 3, 4, 4, 4, 1]), 3)
 
-    def test_all_identical_elements(self):
+    def test_all_elements_same(self):
         self.assertEqual(CountClump.count_clumps([1, 1, 1, 1, 1]), 1)
 
     def test_alternating_clumps(self):
         self.assertEqual(CountClump.count_clumps([1, 1, 2, 2, 3, 3, 4, 4]), 4)
+
+    def test_none_input(self):
+        self.assertEqual(CountClump.count_clumps(None), 0)
 
 if __name__ == '__main__':
     unittest.main()
