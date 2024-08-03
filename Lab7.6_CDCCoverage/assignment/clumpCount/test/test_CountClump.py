@@ -26,5 +26,32 @@ class TestCountClump(unittest.TestCase):
     def test_alternating_clumps(self):
         self.assertEqual(CountClump.count_clumps([1, 1, 2, 2, 3, 3, 4, 4]), 4)
 
+    def test_single_element(self):
+        self.assertEqual(CountClump.count_clumps([1]), 0)
+
+    def test_two_different_elements(self):
+        self.assertEqual(CountClump.count_clumps([1, 2]), 0)
+
+    def test_two_same_elements(self):
+        self.assertEqual(CountClump.count_clumps([1, 1]), 1)
+
+    def test_large_input(self):
+        self.assertEqual(CountClump.count_clumps([1]*1000 + [2]*1000), 2)
+
+    def test_clumps_at_start(self):
+        self.assertEqual(CountClump.count_clumps([1, 1, 2, 3, 4]), 1)
+
+    def test_clumps_at_end(self):
+        self.assertEqual(CountClump.count_clumps([1, 2, 3, 4, 4]), 1)
+
+    def test_clumps_with_gaps(self):
+        self.assertEqual(CountClump.count_clumps([1, 1, 2, 3, 3, 4, 5, 5]), 3)
+
+    def test_non_consecutive_clumps(self):
+        self.assertEqual(CountClump.count_clumps([1, 1, 2, 3, 1, 1]), 2)
+
+    def test_mixed_elements(self):
+        self.assertEqual(CountClump.count_clumps([1, 2, 2, 3, 1, 1, 2, 2]), 3)
+
 if __name__ == '__main__':
     unittest.main()

@@ -4,7 +4,6 @@ import os
 
 sys.path.append('/workspaces/Lab7_653380021-4/Lab7.2_LineCoverage/assignment/clumpCount/source')
 
-
 from CountClump import CountClump
 
 class TestCountClump(unittest.TestCase):
@@ -25,6 +24,15 @@ class TestCountClump(unittest.TestCase):
 
     def test_alternating_clumps(self):
         self.assertEqual(CountClump.count_clumps([1, 1, 2, 2, 3, 3, 4, 4]), 4)
+
+    def test_single_element(self):
+        self.assertEqual(CountClump.count_clumps([1]), 0)
+
+    def test_clumps_at_ends(self):
+        self.assertEqual(CountClump.count_clumps([1, 1, 2, 3, 4, 4]), 2)
+
+    def test_clumps_separated_by_single_elements(self):
+        self.assertEqual(CountClump.count_clumps([1, 1, 2, 3, 3, 4, 5, 5]), 3)
 
 if __name__ == '__main__':
     unittest.main()
