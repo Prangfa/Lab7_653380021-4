@@ -2,7 +2,7 @@ import unittest
 import sys
 import os
 
-sys.path.append('/workspaces/Lab7_653380021-4/Lab7.2_LineCoverage/assignment/clumpCount/source')
+sys.path.append('/workspaces/Lab7_653380021-4/Lab7.3_BlockCoverage/assignment/clumpCount/source')
 
 
 from CountClump import CountClump
