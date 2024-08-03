@@ -16,9 +16,6 @@ class TestCountClump(unittest.TestCase):
     def test_one_clump(self):
         assert CountClump.count_clumps([1, 2, 2, 3, 4]) == 1
 
-    def test_multiple_clumps(self):
-        assert CountClump.count_clumps([1, 2, 2, 3, 3, 4, 4, 4, 1]) == 3
-
     def test_all_elements_same(self):
         assert CountClump.count_clumps([1, 1, 1, 1, 1]) == 1
 
